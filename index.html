@@ -11,44 +11,86 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
-            background: url('https://source.unsplash.com/1600x900/?music') no-repeat center center fixed;
+            background: url('https://source.unsplash.com/1600x900/?music,concert') no-repeat center center fixed;
             background-size: cover;
             text-align: center;
+            height: 100vh;
         }
+
         /* 添加背景色覆盖 */
         .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.7); /* 深色覆盖层让文字更加清晰 */
             padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
+
         /* 标题样式 */
         h1, h2 {
             color: #ffcc00;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
+
         h3, h4, h5, h6 {
             color: #ffd700;
+            margin-bottom: 15px;
         }
+
         /* 列表样式 */
         ol {
             list-style: decimal inside;
             padding: 0;
+            margin-bottom: 40px;
+            text-align: left;
         }
+
         ul, dl {
             text-align: left;
             margin: 0 auto;
             display: inline-block;
         }
+
         /* 歌手名统一样式 */
         .artist {
             color: #00e5ff;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.4em;
+            display: inline;
         }
-        /* 其他修饰 */
+
+        /* 提高元素间距 */
+        p, dl, ol {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
         mark {
             background-color: #ff4081;
             color: white;
             padding: 0 4px;
             border-radius: 3px;
+        }
+
+        /* 列表的间距 */
+        li {
+            margin: 10px 0;
+        }
+
+        /* 数据来源和总结部分的样式 */
+        h6 {
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+
+        /* 强调数据部分 */
+        abbr {
+            text-decoration: underline;
+            font-style: italic;
         }
     </style>
 </head>
@@ -99,5 +141,4 @@
     </div>
 </body>
 </html>
-
 
