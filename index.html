@@ -92,6 +92,16 @@
             text-decoration: underline;
             font-style: italic;
         }
+
+        /* 设置拼音样式 */
+        ruby {
+            font-size: 1.1em;
+        }
+        rt {
+            font-size: 0.5em;
+            color: #ffcc00;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
@@ -110,19 +120,19 @@
         <!-- 歌手排名 -->
         <h4>前五名歌手</h4>
         <ol>
-            <li><span class="artist">米津玄師（Kenshi Yonezu）</span> - 以独特风格和创新精神横扫乐坛。</li>
-            <li><span class="artist">YOASOBI</span> - 将小说改编为歌曲的开创性组合。</li>
-            <li><span class="artist">Aimer</span> - 唱功深厚，抒情曲感人至深。</li>
-            <li><span class="artist">宇多田ヒカル（Hikaru Utada）</span> - 日本音乐界的象征性人物。</li>
-            <li><span class="artist">Official髭男dism</span> - 一支备受喜爱的流行乐队。</li>
+            <li><ruby><span class="artist">米津玄師</span><rt>Kenshi Yonezu</rt></ruby> - 以独特风格和创新精神横扫乐坛。</li>
+            <li><ruby><span class="artist">YOASOBI</span><rt>Yoh-asobi</rt></ruby> - 将小说改编为歌曲的开创性组合。</li>
+            <li><ruby><span class="artist">Aimer</span><rt>艾梅尔</rt></ruby> - 唱功深厚，抒情曲感人至深。</li>
+            <li><ruby><span class="artist">宇多田ヒカル</span><rt>Hikaru Utada</rt></ruby> - 日本音乐界的象征性人物。</li>
+            <li><ruby><span class="artist">Official髭男dism</span><rt>Official Hige Dandism</rt></ruby> - 一支备受喜爱的流行乐队。</li>
         </ol>
 
         <!-- 推荐歌手 -->
         <h5>其他推荐</h5>
         <dl>
-            <dt><span class="artist">LiSA</span></dt>
+            <dt><ruby><span class="artist">LiSA</span><rt>李莎</rt></ruby></dt>
             <dd>凭借多首热门动画主题曲积累大量粉丝。</dd>
-            <dt><span class="artist">RADWIMPS</span></dt>
+            <dt><ruby><span class="artist">RADWIMPS</span><rt>雷德温普斯</rt></ruby></dt>
             <dd>不仅活跃于主流音乐界，更在电影原声领域有出色表现。</dd>
         </dl>
 
@@ -141,4 +151,5 @@
     </div>
 </body>
 </html>
+
 
