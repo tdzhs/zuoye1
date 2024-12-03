@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2024 日语歌手排行榜</title>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         /* 基本样式 */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://source.unsplash.com/1600x900/?music,concert') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(135deg, #6e7dff, #ff6f91);
             color: #ffffff;
             text-align: center;
             height: 100vh;
@@ -21,53 +22,94 @@
         }
 
         .overlay {
-            background-color: rgba(0, 0, 0, 0.7); /* 深色覆盖层，让文字更加清晰 */
+            background-color: rgba(0, 0, 0, 0.75);
             padding: 40px;
             height: 90%;
             width: 80%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             text-align: center;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            overflow-y: auto;
         }
 
         /* 标题样式 */
         h1, h2 {
             color: #ffcc00;
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        h3, h4, h5, h6 {
+        h3, h4 {
             color: #ffd700;
-            margin-bottom: 15px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* 歌手卡片布局 */
+        .card {
+            background-color: #333333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            max-width: 300px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .artist-name {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #00e5ff;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .artist-info {
+            display: none;
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        .card.active .artist-info {
+            display: block;
         }
 
         /* 列表样式 */
-        ol, dl, ul {
+        ol, ul {
             text-align: left;
-            margin: 20px auto;
-            display: inline-block;
-            padding-left: 20px;
+            list-style: none;
+            padding-left: 0;
         }
 
-        /* 歌手名样式 */
-        .artist {
-            color: #00e5ff;
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 1.4em;
-            display: inline;
         }
 
-        /* 提高元素间距 */
-        p, dl, ol {
-            margin-bottom: 20px;
-            font-size: 1.1em;
+        a:hover {
+            text-decoration: underline;
         }
 
+        /* 标记和其他样式 */
         mark {
             background-color: #ff4081;
             color: white;
@@ -75,31 +117,15 @@
             border-radius: 3px;
         }
 
-        /* 列表的间距 */
-        li {
-            margin: 10px 0;
-        }
+        /* 媒体查询，适应不同设备 */
+        @media (max-width: 768px) {
+            .overlay {
+                width: 95%;
+            }
 
-        /* 数据来源和总结部分的样式 */
-        h6 {
-            font-size: 1.2em;
-            margin-top: 30px;
-        }
-
-        /* 强调数据部分 */
-        abbr {
-            text-decoration: underline;
-            font-style: italic;
-        }
-
-        /* 设置拼音样式 */
-        ruby {
-            font-size: 1.1em;
-        }
-        rt {
-            font-size: 0.6em;
-            color: #ffcc00;
-            font-weight: normal;
+            .card {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -118,26 +144,50 @@
 
         <!-- 歌手排名 -->
         <h4>前五名歌手</h4>
-        <ol>
-            <li><ruby><span class="artist">米津玄師</span><rt>Kenshi Yonezu</rt></ruby> - 以独特风格和创新精神横扫乐坛。</li>
-            <li><ruby><span class="artist">YOASOBI</span></ruby> - 将小说改编为歌曲的开创性组合。</li>
-            <li><ruby><span class="artist">Aimer</span></ruby> - 唱功深厚，抒情曲感人至深。</li>
-            <li><ruby><span class="artist">宇多田ヒカル</span><rt>Hikaru Utada</rt></ruby> - 日本音乐界的象征性人物。</li>
-            <li><ruby><span class="artist">Official髭男dism</span><rt>Official Hige Dandism</rt></ruby> - 一支备受喜爱的流行乐队。</li>
-        </ol>
 
-        <!-- 推荐歌手 -->
-        <h5>其他推荐</h5>
-        <dl>
-            <dt><ruby><span class="artist">LiSA</span></ruby></dt>
-            <dd>凭借多首热门动画主题曲积累大量粉丝。</dd>
-            <dt><ruby><span class="artist">RADWIMPS</span></ruby></dt>
-            <dd>不仅活跃于主流音乐界，更在电影原声领域有出色表现。</dd>
-        </dl>
+        <!-- 歌手卡片 -->
+        <div class="card">
+            <div class="artist-name" onclick="toggleInfo(this)">米津玄師 (Kenshi Yonezu)</div>
+            <div class="artist-info">
+                <p>代表作：<strong>Lemon</strong>, <strong>Peace Sign</strong></p>
+                <p>官方网站：<a href="https://www.yonezukenshi.com" target="_blank">访问官网</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="artist-name" onclick="toggleInfo(this)">YOASOBI</div>
+            <div class="artist-info">
+                <p>代表作：<strong>Yoru ni Kakeru</strong>, <strong>Haruka</strong></p>
+                <p>官方网站：<a href="https://www.yoasobi-music.com" target="_blank">访问官网</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="artist-name" onclick="toggleInfo(this)">Aimer (艾梅尔)</div>
+            <div class="artist-info">
+                <p>代表作：<strong>Brave Shine</strong>, <strong>Rising</strong></p>
+                <p>官方网站：<a href="https://www.aimer-web.jp" target="_blank">访问官网</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="artist-name" onclick="toggleInfo(this)">宇多田ヒカル (Hikaru Utada)</div>
+            <div class="artist-info">
+                <p>代表作：<strong>First Love</strong>, <strong>Can You Keep a Secret?</strong></p>
+                <p>官方网站：<a href="https://www.utadahikaru.jp" target="_blank">访问官网</a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="artist-name" onclick="toggleInfo(this)">Official髭男dism</div>
+            <div class="artist-info">
+                <p>代表作：<strong>Pretender</strong>, <strong>Stand By You</strong></p>
+                <p>官方网站：<a href="https://higedan.com" target="_blank">访问官网</a></p>
+            </div>
+        </div>
 
         <!-- 数据来源 -->
-        <h6>数据来源</h6>
-        <p>排行榜数据来源：</p>
+        <h5>数据来源</h5>
         <ul>
             <li>流媒体平台：Spotify、Apple Music、LINE MUSIC。</li>
             <li>销售数据：日本唱片协会（<abbr title="Recording Industry Association of Japan">RIAJ</abbr>）认证。</li>
@@ -148,8 +198,13 @@
         <h3>总结</h3>
         <p>以上榜单展现了2024年日语音乐的辉煌，期待这些歌手未来更多优秀作品！</p>
     </div>
+
+    <script>
+        // 切换歌手信息显示
+        function toggleInfo(element) {
+            const card = element.closest('.card');
+            card.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
-
-
-
