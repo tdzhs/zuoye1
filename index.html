@@ -7,26 +7,31 @@
     <style>
         /* 基本样式 */
         body {
-            font-family: Arial, sans-serif;
-            color: #ffffff;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: url('https://source.unsplash.com/1600x900/?music,concert') no-repeat center center fixed;
             background-size: cover;
+            color: #ffffff;
             text-align: center;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* 添加背景色覆盖 */
         .overlay {
-            background-color: rgba(0, 0, 0, 0.7); /* 深色覆盖层让文字更加清晰 */
-            padding: 20px;
-            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* 深色覆盖层，让文字更加清晰 */
+            padding: 40px;
+            height: 90%;
+            width: 80%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
         /* 标题样式 */
@@ -42,20 +47,14 @@
         }
 
         /* 列表样式 */
-        ol {
-            list-style: decimal inside;
-            padding: 0;
-            margin-bottom: 40px;
+        ol, dl, ul {
             text-align: left;
-        }
-
-        ul, dl {
-            text-align: left;
-            margin: 0 auto;
+            margin: 20px auto;
             display: inline-block;
+            padding-left: 20px;
         }
 
-        /* 歌手名统一样式 */
+        /* 歌手名样式 */
         .artist {
             color: #00e5ff;
             font-weight: bold;
@@ -98,7 +97,7 @@
             font-size: 1.1em;
         }
         rt {
-            font-size: 0.5em;
+            font-size: 0.6em;
             color: #ffcc00;
             font-weight: normal;
         }
@@ -121,8 +120,8 @@
         <h4>前五名歌手</h4>
         <ol>
             <li><ruby><span class="artist">米津玄師</span><rt>Kenshi Yonezu</rt></ruby> - 以独特风格和创新精神横扫乐坛。</li>
-            <li><ruby><span class="artist">YOASOBI</span><rt>Yoh-asobi</rt></ruby> - 将小说改编为歌曲的开创性组合。</li>
-            <li><ruby><span class="artist">Aimer</span><rt>艾梅尔</rt></ruby> - 唱功深厚，抒情曲感人至深。</li>
+            <li><ruby><span class="artist">YOASOBI</span></ruby> - 将小说改编为歌曲的开创性组合。</li>
+            <li><ruby><span class="artist">Aimer</span></ruby> - 唱功深厚，抒情曲感人至深。</li>
             <li><ruby><span class="artist">宇多田ヒカル</span><rt>Hikaru Utada</rt></ruby> - 日本音乐界的象征性人物。</li>
             <li><ruby><span class="artist">Official髭男dism</span><rt>Official Hige Dandism</rt></ruby> - 一支备受喜爱的流行乐队。</li>
         </ol>
@@ -130,9 +129,9 @@
         <!-- 推荐歌手 -->
         <h5>其他推荐</h5>
         <dl>
-            <dt><ruby><span class="artist">LiSA</span><rt>李莎</rt></ruby></dt>
+            <dt><ruby><span class="artist">LiSA</span></ruby></dt>
             <dd>凭借多首热门动画主题曲积累大量粉丝。</dd>
-            <dt><ruby><span class="artist">RADWIMPS</span><rt>雷德温普斯</rt></ruby></dt>
+            <dt><ruby><span class="artist">RADWIMPS</span></ruby></dt>
             <dd>不仅活跃于主流音乐界，更在电影原声领域有出色表现。</dd>
         </dl>
 
@@ -151,5 +150,6 @@
     </div>
 </body>
 </html>
+
 
 
